@@ -10,8 +10,17 @@
     "
   >
     <div
-      data-aos="fade-right"
-      class="w-3/4 md:w-1/2 h-full flex items-center pl-20 md:pl-64"
+      class="
+        wow
+        animate__fadeInLeft
+        w-3/4
+        md:w-1/2
+        h-full
+        flex
+        items-center
+        pl-20
+        md:pl-64
+      "
     >
       <p class="text-lg text-sec">
         自有影視媒體，整合行銷巨擘
@@ -23,9 +32,10 @@
       class="w-1/4 md:w-1/2 h-full flex justify-end items-center mr-12 md:mr-28"
     >
       <img
-        data-aos="zoom-in"
-        data-aos-duration="600"
+        data-aos-duration="0.6s"
         class="
+          wow
+          animate__zoomIn
           w-24
           h-36
           object-cover object-center

@@ -1,8 +1,8 @@
 
 <template>
-<div class="font-NST">
-  <router-view />
-</div>
+  <div class="font-NST">
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -24,17 +24,22 @@ function reportWindowSize() {
   console.log("reportWindowSize");
 }
 window.onresize = reportWindowSize;
-import AOS from "aos";
-// import "aos/dist/aos.css";
+import WOW from "wow.js";
 
 export default {
   mounted() {
     this.$nextTick(function () {
       reportWindowSize();
-      // setTimeout(function () { AOS.init(); }, 1000);
-
+      setTimeout(function () {
+        new WOW({
+          boxClass: "wow",
+          animateClass: "animate__animated",
+          offset: 0,
+          mobile: true,
+          live: true,
+        }).init();
+      }, 100);
     });
-
   },
 };
 </script>
