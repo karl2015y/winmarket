@@ -1,6 +1,6 @@
 <template>
   <div >
-    <img class="h-auto w-[97%] mx-auto" src="pic/news/1.png" alt />
+    <img class="h-auto w-[97%] mx-auto" src="/pic/news/1.png" alt />
     <h1
       class="
         mt-3
