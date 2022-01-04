@@ -24,11 +24,14 @@ function reportWindowSize() {
   console.log("reportWindowSize");
 }
 window.onresize = reportWindowSize;
+import AOS from "aos";
 
 export default {
   mounted() {
     this.$nextTick(function () {
       reportWindowSize();
+      setTimeout(function () { AOS.init(); }, 1000);
+
     });
 
   },
