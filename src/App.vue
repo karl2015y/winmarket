@@ -30,7 +30,7 @@ export default {
   mounted() {
     this.$nextTick(function () {
       reportWindowSize();
-      setTimeout(function () { AOS.init(); }, 1000);
+      // setTimeout(function () { AOS.init(); }, 1000);
 
     });
 
