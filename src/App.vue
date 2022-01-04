@@ -25,6 +25,7 @@ function reportWindowSize() {
 }
 window.onresize = reportWindowSize;
 import AOS from "aos";
+// import "aos/dist/aos.css";
 
 export default {
   mounted() {
