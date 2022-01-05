@@ -24,21 +24,11 @@ function reportWindowSize() {
   console.log("reportWindowSize");
 }
 window.onresize = reportWindowSize;
-import WOW from "wow.js";
 
 export default {
   mounted() {
     this.$nextTick(function () {
       reportWindowSize();
-      setTimeout(function () {
-        new WOW({
-          boxClass: "wow",
-          animateClass: "animate__animated",
-          offset: 0,
-          mobile: true,
-          live: true,
-        }).init();
-      }, 100);
     });
   },
 };

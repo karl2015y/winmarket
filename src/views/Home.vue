@@ -30,7 +30,7 @@
     _class="md:flex-wrap"
   >
     <Card2
-    
+    view-out="test"
       data-wow-duration="0.55s"
       src="/pic/member/1.png"
       jobTitle="執行製片人"
@@ -161,7 +161,14 @@ export default {
     PicText4,
     Footer1,
   },
-  setup(props) {},
+  setup(props) {
+    const test = (e)=>{
+      console.log(e);
+    }
+    return{
+      test
+    }
+  },
 };
 </script>
 
