@@ -1,0 +1,24 @@
+{
+    "chi": {
+        "main_title": "標題",
+        "main_button1": "主按鈕文字(空白及關閉)",
+        "main_button1_link": "主按鈕連結",
+        "main_button2": "副按鈕文字(空白及關閉)",
+        "main_button2_link": "副按鈕連結",
+        "main_content": "內容",
+        "main_pic": "大圖"
+        
+    },
+    "main": {
+        "title": "text",
+        "content": "textarea",
+        "button1": "text",
+        "button1_link": "text",
+        "button2": "text",
+        "button2_link": "text",
+        "pic": "img@720x600"
+    },
+    "sec": {
+      
+    }
+}

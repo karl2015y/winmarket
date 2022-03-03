@@ -1,0 +1,22 @@
+{
+    "chi": {
+        "main_title": "標題",
+        "main_content": "內容",
+        "sec_pic": "內圖",
+        "sec_title": "內標題",
+        "sec_content": "內標題內容",
+        "sec_learn_more": "內閱讀更多",
+        "sec_learn_more_url": "點擊連結"
+    },
+    "main": {
+        "title": "text",
+        "content": "textarea"
+    },
+    "sec": {
+        "pic": "img@471x300",
+        "title": "text",
+        "content": "textarea",
+        "learn_more": "text",
+        "learn_more_url": "text"
+    }
+}

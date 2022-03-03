@@ -2,3 +2,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    :root{
+        --color-base-50:#fff1f2;
+        --color-base-100:#ffe4e6;
+        --color-base-200:#fecdd3;
+        --color-base-300:#fda4af;
+        --color-base-400:#fb7185;
+        --color-base-500:#f43f5e;
+        --color-base-600:#e11d48;
+        --color-base-700:#be123c;
+        --color-base-800:#9f1239;
+        --color-base-900:#881337;
+    }
+}

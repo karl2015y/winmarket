@@ -1,0 +1,17 @@
+{
+    "chi": {
+        "main_pic_phone": "手機板底圖",
+        "main_pic_desktop": "電腦版底圖",
+        "main_content": "宣傳文案",
+        "sec_title": "優勢"
+
+    },
+    "main": {
+        "pic_phone": "img@768x845",
+        "pic_desktop": "img@1920x1080",
+        "content": "textarea"
+    },
+    "sec": {
+        "title": "text"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "chi": {
+        "main_title": "網站名稱",
+        "main_pic": "網站Logo",
+        "sec_title": "Menu分頁標題",
+        "sec_link": "Menu分頁連結"
+    },
+    "main": {
+        "pic": "img@60x60",
+        "title": "text"
+
+    },
+    "sec": {
+        "title": "text",
+        "link": "text"
+    }
+}

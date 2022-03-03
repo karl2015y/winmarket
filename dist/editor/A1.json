@@ -1,0 +1,16 @@
+{
+    "chi": {
+        "main_pic_phone": "手機板網站Logo",
+        "main_pic_desktop": "電腦版網站Logo",
+        "sec_title": "Menu分頁標題",
+        "sec_link": "Menu分頁連結"
+    },
+    "main": {
+        "pic_phone": "img@100x45",
+        "pic_desktop": "img@60x60"
+    },
+    "sec": {
+        "title": "text",
+        "link": "text"
+    }
+}

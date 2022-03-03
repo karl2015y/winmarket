@@ -1,0 +1,15 @@
+{
+    "chi": {
+        "sec_title": "圖片的文字描述",
+        "sec_url": "點擊圖片跳轉的網頁",
+        "sec_pic_phone": "手機板圖片(820x410)",
+        "sec_pic_desktop": "電腦板圖片(1920x1080)"  
+    },
+    "main": {},
+    "sec": {
+        "title": "text",
+        "url": "text",
+        "pic_phone": "img@820x410",
+        "pic_desktop": "img@1920x1080"
+    }
+}
