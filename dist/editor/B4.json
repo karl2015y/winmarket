@@ -1,0 +1,22 @@
+{
+    "chi": {
+        "main_title_cht": "章節名稱(中文)",
+        "main_title_eng": "章節名稱(英文)",
+        "sec_img_url": "文章圖片",
+        "sec_title": "文章標題",
+        "sec_content": "文章內容",
+        "sec_button_text": "按鈕文字",
+        "sec_button_link": "按鈕連結"
+    },
+    "main": {
+        "title_cht": "text",
+        "title_eng": "text"
+    },
+    "sec": {
+        "img_url": "img@400x300",
+        "title": "text",
+        "content": "textarea",
+        "button_text": "text",
+        "button_link": "text"
+    }
+}

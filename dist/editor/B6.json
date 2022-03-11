@@ -1,0 +1,14 @@
+{
+    "chi": {
+        "main_title_cht": "章節主標題",
+        "main_title_eng": "章節副標題",
+        "sec_img_url": "圖片"
+    },
+    "main": {
+        "title_cht": "text",
+        "title_eng": "text"
+    },
+    "sec": {
+        "img_url": "img@460x250"
+    }
+}

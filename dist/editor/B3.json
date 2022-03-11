@@ -1,0 +1,11 @@
+{
+    "chi": {
+        "main_slogan": "標語",
+        "main_pic_slogan": "標語圖片"
+    },
+    "main": {
+        "slogan": "textarea",
+        "pic_slogan": "img@500x750"
+    },
+    "sec": {}
+}

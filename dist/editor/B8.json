@@ -1,0 +1,22 @@
+{
+    "chi": {
+        "main_title_cht": "章節名稱(中文)",
+        "main_title_eng": "章節名稱(英文)",
+        "sec_img_url": "人員圖片",
+        "sec_title": "人員頭銜",
+        "sec_name_cht": "人員名稱(中文)",
+        "sec_name_eng": "人員名稱(英文)",
+        "sec_delay": "動畫延遲秒數"
+    },
+    "main": {
+        "title_cht": "text",
+        "title_eng": "text"
+    },
+    "sec": {
+        "img_url": "img@300x300",
+        "title": "text",
+        "name_cht": "text",
+        "name_eng": "text",
+        "delay": "text"
+    }
+}

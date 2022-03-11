@@ -1,1 +1,0 @@
-import{_ as e}from"./index.827d2c96.js";import{n as t,v as o}from"./vendor.2577d0b7.js";const r={setup(){}},s={class:"bg-skin-500 text-center font-bold text-xs md:text-lg py-2.5 md:py-5 text-white"};function n(c,a,d,p,i,_){return o(),t("footer",s,"\xA9 2021 Win Market Channel All Right Reserved.")}var x=e(r,[["render",n]]);export{x as default};

@@ -1,0 +1,22 @@
+{
+    "chi": {
+        "main_show_count": "顯示的文章數量(若全部顯示，請輸入「All」)",
+        "main_title_cht": "章節名稱(中文)",
+        "main_title_eng": "章節名稱(英文)",
+        "sec_img_url": "圖片",
+        "sec_name_cht": "中文名",
+        "sec_name_eng": "英文名",
+        "sec_content": "內文"
+    },
+    "main": {
+        "show_count": "text",
+        "title_cht": "text",
+        "title_eng": "text"
+    },
+    "sec": {
+        "img_url": "img@300x363",
+        "name_cht": "text",
+        "name_eng": "text",
+        "content": "textarea"
+    }
+}

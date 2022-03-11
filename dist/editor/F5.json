@@ -1,0 +1,13 @@
+{
+    "chi": {
+        "main_title": "章節名稱",
+        "main_content": "內容",
+        "main_img_url": "內容"
+    },
+    "main": {
+        "title": "text",
+        "content": "textarea",
+        "img_url": "img@400x450"
+    },
+    "sec": {}
+}
