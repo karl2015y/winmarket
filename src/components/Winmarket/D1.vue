@@ -1,12 +1,12 @@
 <template>
   <PicText3
     class="px-8 md:px-24 xl:px-36 2xl:px-52 pt-5 md:pt-28 pb-12 md:pb-32"
-    chtTitle="關於網紅"
-    engTitle=""
+      :chtTitle="loc_data.main.title_cht.value"
+    :engTitle="loc_data.main.title_eng.value"
     _class="!w-full flex-col"
   >
     <div class="!w-full grid grid-cols-3 md:grid-cols-5 gap-3">
-      <a href="#" v-for="item in 15" :key="item">
+      <a href="#" v-for="item in show_list" :key="item">
         <div
           class="
             bg-gray-300
@@ -19,7 +19,11 @@
             relative
           "
         >
-          {{ item }}
+          <img
+            class="w-full h-full object-cover"
+            :src="item.img_url.value"
+            alt=""
+          />
           <div
             class="
               w-full
@@ -36,23 +40,20 @@
               items-center
             "
           >
-            <h1 class="text-base mb-1">姓名 / NAME</h1>
-            <p>
-              資訊簡介資訊簡介 <br />
-              資訊簡介資訊簡介 <br />
-              資訊簡介資訊簡介 <br />
-              資訊簡介資訊簡介 <br />
-              資訊簡介資訊簡介 <br />
-              資訊簡介資訊簡介 <br />
+            <h1 class="text-base mb-1">
+              {{ item.name_cht.value }} / {{ item.name_eng.value }}
+            </h1>
+            <p class="whitespace-pre-line">
+              {{ item.content.value }}
             </p>
           </div>
         </div>
       </a>
     </div>
 
-    <nav aria-label="Page navigation example">
+    <nav v-if="all_pages > 1" aria-label="Page navigation example">
       <ul class="inline-flex items-center -space-x-px">
-        <li>
+        <li @click="changePageHandler(show_page - 1)">
           <a
             href="#"
             class="
@@ -83,38 +84,13 @@
             </svg>
           </a>
         </li>
-        <li>
+        <li
+          v-for="page in all_pages"
+          :key="page"
+          @click="changePageHandler(page)"
+        >
           <a
-            href="#"
-            class="
-              py-1.5
-              px-3
-              leading-tight
-              text-gray-500
-              bg-white
-              border border-gray-300
-              hover:bg-gray-100 hover:text-gray-700
-            "
-            >1</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            class="
-              py-1.5
-              px-3
-              leading-tight
-              text-gray-500
-              bg-white
-              border border-gray-300
-              hover:bg-gray-100 hover:text-gray-700
-            "
-            >2</a
-          >
-        </li>
-        <li>
-          <a
+            v-if="page == show_page"
             href="#"
             aria-current="page"
             class="
@@ -126,13 +102,11 @@
               bg-blue-50
               border border-blue-300
               hover:bg-blue-100 hover:text-blue-700
-              dark:border-gray-700 dark:bg-gray-700 dark:text-white
             "
-            >3</a
+            >{{ page }}</a
           >
-        </li>
-        <li>
           <a
+            v-else
             href="#"
             class="
               py-1.5
@@ -143,25 +117,15 @@
               border border-gray-300
               hover:bg-gray-100 hover:text-gray-700
             "
-            >4</a
+            >{{ page }}</a
           >
         </li>
-        <li>
-          <a
-            href="#"
-            class="
-              py-1.5
-              px-3
-              leading-tight
-              text-gray-500
-              bg-white
-              border border-gray-300
-              hover:bg-gray-100 hover:text-gray-700
-            "
-            >5</a
-          >
-        </li>
-        <li>
+
+        <!-- <li>
+         
+        </li> -->
+
+        <li @click="changePageHandler(show_page + 1)">
           <a
             href="#"
             class="
@@ -197,11 +161,94 @@
 </template>
 <script>
 import PicText3 from "@/components/PicText/PicText_3.vue";
+import { computed, ref, watch } from "vue";
 
 export default {
   components: {
     PicText3,
   },
-  setup() {},
+  props: ["data"],
+  setup(props) {
+    const loc_data = ref({
+      main: {
+        show_count: { type: "text", value: "1" },
+        title_cht: { type: "text", value: "關於網紅" },
+        title_eng: { type: "text", value: "" },
+      },
+      sec: [
+        {
+          img_url: {
+            type: "img@600x600",
+            value:
+              "https://firebasestorage.googleapis.com/v0/b/bgp-web.appspot.com/o/images%2F73d1f247-627d-4c06-a461-ecc67ba3cc63.png?alt=media&token=406d9f92-b17c-4591-823e-46ac50bd4315",
+          },
+          name_cht: { type: "text", value: "a" },
+          name_eng: { type: "text", value: "A" },
+          content: { type: "textarea", value: "aaaa\naaaa\naaaa" },
+        },
+        {
+          img_url: {
+            type: "img@600x600",
+            value:
+              "https://firebasestorage.googleapis.com/v0/b/bgp-web.appspot.com/o/images%2Fe2b49027-c823-4d45-b4c1-fbcc98f81171.png?alt=media&token=e40d21a0-8064-4398-b2d7-91c18e7cdca3",
+          },
+          name_cht: { type: "text", value: "b" },
+          name_eng: { type: "text", value: "B" },
+          content: { type: "textarea", value: "bbbb\nbbbb\nbbbb\nbbbb" },
+        },
+        {
+          img_url: {
+            type: "img@600x600",
+            value:
+              "https://firebasestorage.googleapis.com/v0/b/bgp-web.appspot.com/o/images%2Fc6fe9c0e-1277-4813-b535-c5c464fda6fa.png?alt=media&token=3c8e8c3b-247e-408f-b8f8-3cc8779004b1",
+          },
+          name_cht: { type: "text", value: "c" },
+          name_eng: { type: "text", value: "C" },
+          content: { type: "textarea", value: "cccc\ncccc\ncccc" },
+        },
+      ],
+    });
+    if (props.data) {
+      loc_data.value = JSON.parse(props.data);
+      watch(
+        () => props.data,
+        (val) => {
+          loc_data.value = JSON.parse(val);
+        }
+      );
+    }
+    const all_pages = computed(() => {
+      if (loc_data.value.main.show_count.value == "All") {
+        return 0;
+      }
+      return Math.ceil(
+        loc_data.value.sec.length / Number(loc_data.value.main.show_count.value)
+      );
+    });
+    const show_page = ref(1);
+    const changePageHandler = (val) => {
+      if (val > all_pages.value || val < 1) {
+        return false;
+      }
+      show_page.value = val;
+    };
+    const show_list = computed(() => {
+      if (loc_data.value.main.show_count.value == "All") {
+        return loc_data.value.sec;
+      }
+      return loc_data.value.sec.slice(
+        (show_page.value - 1) * loc_data.value.main.show_count.value,
+        show_page.value * loc_data.value.main.show_count.value
+      );
+    });
+
+    return {
+      loc_data,
+      show_list,
+      all_pages,
+      show_page,
+      changePageHandler,
+    };
+  },
 };
 </script>

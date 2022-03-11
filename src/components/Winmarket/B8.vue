@@ -14,75 +14,90 @@
       pb-12
       md:pb-56
     "
-    chtTitle="行銷企劃團隊"
+    :chtTitle="loc_data.main.title_cht.value"
+    :engTitle="loc_data.main.title_eng.value"
     _chtTitleClass="text-white md:mt-5"
-    engTitle="MARKETING PLANNING TEAM"
     _engTitleClass="text-[#FCD44D] mt-2.5 mb:mb-5 md:mt-0 md:mb-32"
     _class="flex-wrap md:flex-nowrap md:!gap-3 !mt-4"
   >
     <Card3
-      data-wow-delay="0.25s"
+      v-for="item in loc_data.sec"
+      :key="item.name_cht.value"
+      :data-wow-delay="`${item.delay.value}s`"
       data-wow-duration="0.5s"
-      src="/pic/member/4.jpg"
+      :src="item.img_url.value"
       class="wow animate__fadeInRight w-[28%]"
-      chtName="鄭洛喬"
-      engName="Elie"
-      jobTitle="品牌行銷企劃經理"
-    />
-    <Card3
-      data-wow-delay="0.15s"
-      data-wow-duration="0.5s"
-      src="/pic/member/5.jpg"
-      class="wow animate__fadeInRight w-[28%]"
-      chtName="李佩芬"
-      engName="Joanne"
-      jobTitle="特助/IT支援"
-    />
-    <Card3
-      data-wow-duration="0.5s"
-      src="/pic/member/6.png"
-      class="wow animate__fadeInRight w-[28%]"
-      chtName="王彥君"
-      engName="Amber"
-      jobTitle="品牌行銷企劃主任"
-    />
-    <Card3
-      data-wow-duration="0.5s"
-      src="/pic/member/7.PNG"
-      class="wow animate__fadeInLeft w-[28%] mt-10 md:mt-0"
-      chtName="徐小玲"
-      engName="Shelly"
-      jobTitle="品牌行銷企劃副理"
-    />
-    <Card3
-      data-wow-delay="0.15"
-      data-wow-duration="0.5s"
-      src="/pic/member/8.png"
-      class="wow animate__fadeInLeft w-[28%] mt-10 md:mt-0"
-      chtName="黃貞菱"
-      engName="Daisy"
-      jobTitle="社群行銷企劃"
-    />
-    <Card3
-      data-wow-delay="0.25s"
-      data-wow-duration="0.5s"
-      src="/pic/member/9.png"
-      class="wow animate__fadeInLeft w-[28%] mt-10 md:mt-0"
-      chtName="袁薏如"
-      engName="Elu"
-      jobTitle="視覺設計企劃"
+      :chtName="item.name_cht.value"
+      :engName="item.name_eng.value"
+      :jobTitle="item.title.value"
     />
   </PicText3>
 </template>
 <script>
 import PicText3 from "@/components/PicText/PicText_3.vue";
 import Card3 from "@/components/Card/Card_3.vue";
+import { ref, watch } from "vue";
 
 export default {
   components: {
     PicText3,
     Card3,
   },
-  setup() {},
+  props: ["data"],
+  setup(props) {
+    const loc_data = ref({
+      main: {
+        title_cht: { type: "text", value: "行銷企劃團隊" },
+        title_eng: { type: "text", value: "MARKETING PLANNING TEAM" },
+      },
+      sec: [
+        {
+          img_url: {
+            type: "img@300x300",
+            value:
+              "https://firebasestorage.googleapis.com/v0/b/bgp-web.appspot.com/o/images%2Feb8cc515-b3b7-4a57-b2b3-182b7491e4ff.png?alt=media&token=24759e41-69f6-4a2b-babc-22d26a5bd3f2",
+          },
+          title: { type: "text", value: "品牌行銷企劃經理" },
+          name_cht: { type: "text", value: "鄭洛喬" },
+          name_eng: { type: "text", value: "Elie" },
+          delay: { type: "text", value: "0.25" },
+        },
+        {
+          img_url: {
+            type: "img@300x300",
+            value:
+              "https://firebasestorage.googleapis.com/v0/b/bgp-web.appspot.com/o/images%2F7c4da530-330c-48aa-9fec-cfb12829b4c7.png?alt=media&token=307f137e-d5a3-48c5-9c61-e0634c982969",
+          },
+          title: { type: "text", value: "特助/IT支援" },
+          name_cht: { type: "text", value: "李佩芬" },
+          name_eng: { type: "text", value: "Joanne" },
+          delay: { type: "text", value: "0.15" },
+        },
+        {
+          img_url: {
+            type: "img@300x300",
+            value:
+              "https://firebasestorage.googleapis.com/v0/b/bgp-web.appspot.com/o/images%2F3e9e9046-2903-40ac-ac07-f08ac5e67226.png?alt=media&token=f5191938-0db1-4647-b342-902f199a6026",
+          },
+          title: { type: "text", value: "品牌行銷企劃主任" },
+          name_cht: { type: "text", value: "王彥君" },
+          name_eng: { type: "text", value: "Amber" },
+          delay: { type: "text", value: "0.5" },
+        },
+      ],
+    });
+    if (props.data) {
+      loc_data.value = JSON.parse(props.data);
+      watch(
+        () => props.data,
+        (val) => {
+          loc_data.value = JSON.parse(val);
+        }
+      );
+    }
+    return {
+      loc_data,
+    };
+  },
 };
 </script>

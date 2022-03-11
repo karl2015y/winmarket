@@ -5,11 +5,29 @@
 <script>
 import PicText4 from "@/components/PicText/PicText_4.vue";
 import Footer1 from "@/components/Footer/Footer_1.vue";
+import { ref, watch } from "vue";
 export default {
   components: {
     PicText4,
     Footer1,
   },
-  setup() {},
+   props: ["data"],
+  setup(props) {
+    const loc_data = ref({
+    
+    });
+    if (props.data) {
+      loc_data.value = JSON.parse(props.data);
+      watch(
+        () => props.data,
+        (val) => {
+          loc_data.value = JSON.parse(val);
+        }
+      );
+    }
+    return {
+      loc_data,
+    };
+  },
 };
 </script>

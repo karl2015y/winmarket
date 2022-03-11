@@ -1,7 +1,6 @@
 <template>
   <section
     class="
-      border-b border-solid border-main
       flex
       bg-[url('/icon/bg02-04.jpg')] bg-contain bg-no-repeat bg-center
       w-full
@@ -22,10 +21,8 @@
         md:pl-64
       "
     >
-      <p class="text-lg text-sec">
-        自有影視媒體，整合行銷巨擘
-        <br />精準投放，盡在穩盈 <br />唯有穩盈，締造多贏
-        <br />
+      <p class="text-lg text-sec whitespace-pre-line">
+        {{ loc_data.main.slogan.value }}
       </p>
     </div>
     <div
@@ -47,16 +44,47 @@
           md:rounded-tr-[75px]
           md:rounded-bl-[75px]
         "
-        src="/pic/home/SLOGAN.png"
-        alt
+        :src="loc_data.main.pic_slogan.value"
+        :alt="loc_data.main.slogan.value"
       />
     </div>
   </section>
 </template>
 <script>
+import { ref, watch } from "vue";
+
 export default {
-  setup() {},
+  props: ["data"],
+  setup(props) {
+    const loc_data = ref({
+      main: {
+        slogan: {
+          type: "textarea",
+          value:
+            "自有影視媒體，整合行銷巨擘\n精準投放，盡在穩盈\n唯有穩盈，締造多贏",
+        },
+        pic_slogan: {
+          type: "img@500x750",
+          value:
+            "https://firebasestorage.googleapis.com/v0/b/bgp-web.appspot.com/o/images%2F8c576d0c-15a6-46c7-b0bd-afeae4e7f2b7.png?alt=media&token=53b911f0-e302-4923-8e6d-f60b241776c0",
+        },
+      },
+      sec: [],
+    });
+    if (props.data) {
+      loc_data.value = JSON.parse(props.data);
+
+      watch(
+        () => props.data,
+        (val) => {
+          loc_data.value = JSON.parse(val);
+        }
+      );
+    }
+
+    return {
+      loc_data,
+    };
+  },
 };
 </script>
-<style scoped>
-</style>

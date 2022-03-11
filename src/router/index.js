@@ -88,7 +88,20 @@ const routes = [
 
         ]
       },
+      // 問卷管理
+      {
+        path: 'form',
+        component: normalLayout,
+        children: [
+          {
+            path: '',
+            name: 'formeList',
+            component: () => import(/* webpackChunkName: "forms" */ '../views/form/list.vue'),
+          },
 
+
+        ]
+      },
 
     ]
   },

@@ -15,7 +15,8 @@
         <div class="w-full">
           <div class="flex md:flex-col gap-3">
             <input
-              type="LastName"
+              v-model="data.LastName"
+              type="text"
               id="LastName"
               class="
                 shadow-sm
@@ -32,6 +33,7 @@
               required
             />
             <input
+              v-model="data.FirstName"
               type="FirstName"
               id="FirstName"
               class="
@@ -51,8 +53,9 @@
           </div>
           <div class="flex md:flex-col gap-3 mt-3">
             <input
-              type="LastName"
-              id="LastName"
+              v-model="data.CompanyName"
+              type="text"
+              id="CompanyName"
               class="
                 shadow-sm
                 bg-gray-50
@@ -68,8 +71,9 @@
               required
             />
             <input
-              type="LastName"
-              id="LastName"
+              v-model="data.Phone"
+              type="Phone"
+              id="text"
               class="
                 shadow-sm
                 bg-gray-50
@@ -87,8 +91,9 @@
           </div>
           <div class="flex md:flex-col mt-3">
             <input
-              type="LastName"
-              id="LastName"
+              v-model="data.Email"
+              type="email"
+              id="Email"
               class="
                 shadow-sm
                 bg-gray-50
@@ -107,6 +112,7 @@
         </div>
         <div class="w-full">
           <textarea
+            v-model="data.Note"
             rows="8"
             class="
               block
@@ -125,6 +131,7 @@
       </div>
       <div class="text-center">
         <button
+          @click="submitHandler()"
           class="
             mt-3
             md:mt-6
@@ -146,11 +153,40 @@
 </template>
 <script>
 import PicText3 from "@/components/PicText/PicText_3.vue";
+import { ref } from "vue";
+import { pushDocument2Collection } from "@/db.js";
 
 export default {
   components: {
     PicText3,
   },
-  setup() {},
+  setup() {
+    const data = ref({
+      LastName: "",
+      FirstName: "",
+      CompanyName: "",
+      Phone: "",
+      Email: "",
+      Note: "",
+    });
+    const submitHandler = () => {
+      pushDocument2Collection(["form", "XeM0DqNM96oRIxeRfRou", "response"], {
+        date: new Date().getTime(),
+        contactWay:
+          `聯絡人：${data.value.LastName}${data.value.FirstName}\n` +
+          `公司名稱：${data.value.CompanyName}\n` +
+          `連絡電話：${data.value.Phone}\n` +
+          `電子信箱：${data.value.Email}`,
+        Note: data.value.Note,
+        status: "等待回復",
+      }).then(() => {
+        alert("已送出，我們將會盡快與您聯繫");
+      });
+    };
+    return {
+      data,
+      submitHandler,
+    };
+  },
 };
 </script>

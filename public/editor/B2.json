@@ -1,0 +1,18 @@
+{
+    "chi": {
+        "main_icon": "段落圖示",
+        "main_title": "段落標題",
+        "sec_title": "Icon 主標",
+        "sec_subTitle": "Icon 副標",
+        "sec_icon_url": "Icon"
+    },
+    "main": {
+        "icon": "img@75x75",
+        "title": "text"
+    },
+    "sec": {
+        "title": "text",
+        "subTitle": "text",
+        "icon_url": "img@75x75"
+    }
+}

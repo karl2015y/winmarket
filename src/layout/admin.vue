@@ -23,9 +23,16 @@
     <h2>後臺管理</h2>
   </div>
 
-  <div>
-    <router-view></router-view>
-  </div>
+  <section class="flex h-full">
+    <ul class="h-full w-32 text-center">
+      <li class="my-2"><a href="/admin/pages">頁面管理</a></li>
+      <!-- <li class="my-2"><a href="/admin/post">文章管理</a></li> -->
+      <li class="my-2"><a href="/admin/form">問卷管理</a></li>
+    </ul>
+    <div class="h-full w-full">
+      <router-view></router-view>
+    </div>
+  </section>
 </template>
 
 <script>

@@ -1,0 +1,14 @@
+{
+    "chi": {
+        "main_title": "章節名稱",
+        "sec_title": "標題",
+        "sec_content": "內容"
+    },
+    "main": {
+        "title": "text"
+    },
+    "sec": {
+        "title": "text",
+        "content": "textarea"
+    }
+}

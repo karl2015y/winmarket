@@ -1,6 +1,6 @@
 
 <template>
-  <div class="font-NST bg-gray-50 overflow-x-hidden">
+  <div class="font-NST bg-gray-50 overflow-x-hidden min-h-screen">
     <router-view />
   </div>
   <transition
